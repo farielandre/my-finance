@@ -1,0 +1,62 @@
+/* Reset */
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+h1,
+h2,
+h3,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Root variables */
+
+:root {
+  /* font-color */
+ 
+
+  /* font-family */
+
+
+  /* font-s = font-size */
+
+
+  /* font-w = font-weight */
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hide {
+  display: none;
+}
