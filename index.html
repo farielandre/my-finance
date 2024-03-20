@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="finance tracking" />
     <meta name="description" content="Finance tracking application" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>MyFinance - Sistema de Controle Financeiro</title>
 </head>
 
 <body>
-    <h1>Sistema de Controle Financeiro</h1>
-    <form id="formConta">
-        <label for="descricao">Descrição da despesa:</label><br>
-        <input type="text" id="descricao" name="descricao"><br>
-        <label for="categoria">Categoria:</label><br>
-        <input type="text" id="categoria" name="categoria"><br>
-        <label for="valor">Valor:</label><br>
-        <input type="text" id="valor" name="valor"><br>
-        <label for="data">Data:</label><br>
-        <input type="text" id="data" name="data"><br>
-        <input type="submit" value="Adicionar despesa">
-    </form>
-    <div id="contas"></div>
-    <script src="atividade_1.js"></script>
+    <div class="container">
+        <h1>MyFinance - Controle Financeiro</h1>
+        <form class="form" id="formdespesa">
+            <label for="descricao">Descrição da despesa:</label><br>
+            <input class="input" type="text" id="descricao" name="descricao" placeholder="Ex: Almoço com amigos"><br>
+            <label for="categoria">Categoria:</label><br>
+            <input class="input" type="text" id="categoria" name="categoria" placeholder="Ex: Alimentação"><br>
+            <label for="valor">Valor:</label><br>
+            <input class="input" type="text" id="valor" name="valor" placeholder="R$"><br>
+            <label for="data">Data:</label><br>
+            <input class="input" type="date" id="data" name="data"><br>
+            <input class="botao" type="submit" value="Adicionar despesa">
+        </form>
+    </div>
+    <div class="despesas-lista" id="despesas"></div>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

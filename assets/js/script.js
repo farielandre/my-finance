@@ -1,27 +1,27 @@
-document.getElementById('formConta').addEventListener('submit', function(e) {
+document.getElementById('formdespesa').addEventListener('submit', function(e) {
     e.preventDefault();
     let descricao = document.getElementById('descricao').value;
     let categoria = document.getElementById('categoria').value;
     let valor = document.getElementById('valor').value;
-    let vencimento = document.getElementById('vencimento').value;
-    adicionarConta(descricao, categoria, valor, vencimento);
-    exibirContas();
+    let data = document.getElementById('data').value;
+    adicionarDespesa(descricao, categoria, valor, data);
+    exibirDespesa();
 });
 
-function adicionarConta(descricao, categoria, valor, vencimento) {
-    let contas = JSON.parse(localStorage.getItem('contas')) || [];
-    let conta = { descricao, categoria, valor, vencimento };
-    contas.push(conta);
-    localStorage.setItem('contas', JSON.stringify(contas));
+function adicionarDespesa(descricao, categoria, valor, data) {
+    let despesas = JSON.parse(localStorage.getItem('despesas')) || [];
+    let despesa = { descricao, categoria, valor, data };
+    despesas.push(despesa);
+    localStorage.setItem('despesas', JSON.stringify(despesas));
 }
 
-function exibirContas() {
-    let contas = JSON.parse(localStorage.getItem('contas')) || [];
-    let divContas = document.getElementById('contas');
-    divContas.innerHTML = '';
-    contas.forEach((conta, index) => {
-        let contaDiv = document.createElement('div');
-        contaDiv.textContent = `Conta ${index + 1}: ${conta.descricao}, ${conta.categoria}, ${conta.valor}, ${conta.vencimento}`;
-        divContas.appendChild(contaDiv);
+function exibirDespesa() {
+    let despesas = JSON.parse(localStorage.getItem('despesas')) || [];
+    let divdespesas = document.getElementById('despesas');
+    divdespesas.innerHTML = '';
+    despesas.forEach((despesa, index) => {
+        let despesaDiv = document.createElement('div');
+        despesaDiv.textContent = `Despesa ${index + 1}: Descrição: ${despesa.descricao}. Categoria: ${despesa.categoria}. Valor: R$ ${despesa.valor}. Data: ${despesa.data}`;
+        divdespesas.appendChild(despesaDiv);
     });
 }
