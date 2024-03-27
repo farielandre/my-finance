@@ -1,12 +1,24 @@
-document.getElementById('formdespesa').addEventListener('submit', function(e) {
+const formDespesa = document.getElementById('formdespesa');
+const descricaoInput = document.getElementById('descricao');
+const categoriaInput = document.getElementById('categoria');
+const valorInput = document.getElementById('valor');
+const dataInput = document.getElementById('data');
+const divDespesas = document.getElementById('despesas');
+
+formDespesa.addEventListener('submit', function(e) {
     e.preventDefault();
-    let descricao = document.getElementById('descricao').value;
-    let categoria = document.getElementById('categoria').value;
-    let valor = document.getElementById('valor').value;
-    let data = document.getElementById('data').value;
+    const descricao = getInputValue(descricaoInput);
+    const categoria = getInputValue(categoriaInput);
+    const valor = getInputValue(valorInput);
+    const data = getInputValue(dataInput);
     adicionarDespesa(descricao, categoria, valor, data);
     exibirDespesa();
 });
+
+
+function getInputValue(inputElement) {
+    return inputElement.value.trim() || "Não informado";
+}
 
 function adicionarDespesa(descricao, categoria, valor, data) {
     let despesas = JSON.parse(localStorage.getItem('despesas')) || [];
@@ -17,11 +29,14 @@ function adicionarDespesa(descricao, categoria, valor, data) {
 
 function exibirDespesa() {
     let despesas = JSON.parse(localStorage.getItem('despesas')) || [];
-    let divdespesas = document.getElementById('despesas');
-    divdespesas.innerHTML = '';
+    divDespesas.innerHTML = '';
     despesas.forEach((despesa, index) => {
         let despesaDiv = document.createElement('div');
         despesaDiv.textContent = `Despesa ${index + 1}: Descrição: ${despesa.descricao}. Categoria: ${despesa.categoria}. Valor: R$ ${despesa.valor}. Data: ${despesa.data}`;
-        divdespesas.appendChild(despesaDiv);
+        divDespesas.appendChild(despesaDiv);
     });
 }
+
+window.addEventListener('beforeunload', function() {
+    localStorage.removeItem('despesas');
+});
