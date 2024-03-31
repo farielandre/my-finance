@@ -38,14 +38,36 @@ button {
 }
 
 ::placeholder {
-  color:#b8b8b8;
+  color: #b8b8b8;
   font-size: var(--font-s-sm);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hide {
+  display: none;
+}
+
+h1 {
+  font-family: var(--font-family);
+  font-size: var(--font-s-lg);
+  font-weight: var(--font-w-medium);
+  margin: 0 0 2rem 0;
+}
+
+label {
+  font-family: var(--font-family);
+  font-size: var(--font-s-m);
+  font-weight: var(--font-w-medium);
 }
 
 /* Root variables */
 :root {
   /* font-color */
   --color-black: #000000;
+  --color-white: #ffffff;
   --color-grey: #6B6B6B;
   --color-light-grey: #EAEAEA;
   --color-medium-blue: #4762AE;
@@ -68,26 +90,126 @@ button {
   --font-w-light: 300;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-.hide {
-  display: none;
-}
-
-/* main */
+/* container */
 
 .container {
   display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  background-color: var(--color-light-grey);
+}
+
+/* nav */
+
+.nav {
+  background-color: var(--color-dark-blue);
+  max-width: 230px;
+  min-width: 230px;
+  padding: 3rem;
+}
+
+.nav-logo {
+  font-family: var(--font-family);
+  color: var(--color-light-grey);
+  font-size: 30px;
+}
+
+/* Buttons */
+
+.nav-botoes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-family: var(--font-family);
+  font-weight: var(--font-w-medium);
+  font-size: var(--font-s-m);
+}
+
+.nav-botao {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--color-light-grey);
+  border-radius: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+}
+
+.fa-chevron-right {
+  margin-left: auto;
+}
+
+.nav-botao:hover {
+  background: var(--color-medium-blue);
+  transition: all 0.3s;
+}
+
+
+/* app */
+
+.app {
+  margin: 3rem 3rem 4rem 2rem;
+  width: 100%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5% 15% 30% 50%;
+  /* grid-auto-rows: auto; */
+  grid-template-areas:
+    "app-data app-data"
+    "app-overview app-overview"
+    "app-graph--despesas app-graph--receitas"
+    "despesas receitas";
+}
+
+.app-data {
+  grid-area: app-data;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.app-overview {
+  grid-area: app-overview;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.app-graph--despesas {
+  grid-area: app-graph--despesas;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.app-graph--receitas {
+  grid-area: app-graph--receitas;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.despesas {
+  grid-area: despesas;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--color-light-grey);
-  width: 400px;
-  border: 1px solid var(--color-grey);
-  margin: 3rem auto 0rem auto;
-  padding: 2rem;
+  /* background-color: var(--color-light-grey); */
+  background-color: var(--color-white);
+  /* width: 400px; */
   border-radius: 12px;
+  padding: 1rem;
+}
+
+.receitas {
+  grid-area: receitas;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 1rem;
 }
 
 .input {
@@ -98,19 +220,6 @@ html {
   height: 38px;
   border: 1px solid var(--color-grey);
   margin: 3px 0 1rem 0;
-}
-
-h1 {
-  font-family: var(--font-family);
-  font-size: var(--font-s-lg);
-  font-weight: var(--font-w-medium);
-  margin: 0 0 2rem 0;
-}
-
-label {
-  font-family: var(--font-family);
-  font-size: var(--font-s-m);
-  font-weight: var(--font-w-medium);
 }
 
 .botao {
