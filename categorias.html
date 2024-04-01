@@ -13,7 +13,7 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/styles/global.css" />
-    <title>MyFinance - Sistema de Controle Financeiro - Visão mensal</title>
+    <title>MyFinance - Sistema de Controle Financeiro - Categorias</title>
 </head>
 
 <body>
@@ -45,36 +45,12 @@
                 </a>
             </div>
         </nav>
-        <div class="app">
-            <div class="app-data">
-                <h1>Seletor de ano e/ou mês</h1>
+        <div class="app-categorias">
+            <div class="app-categorias--despesas">
+                <h1 class="categorias-despesas-cabecalho"><i class="fa-solid fa-tag"></i>Categorias de despesas</h1>
             </div>
-            <div class="app-overview">
-                <h1>Visão geral de Abril</h1>
-            </div>
-            <div class="app-graf--despesas">
-                <h1>Gráfico despesas de Abril</h1>
-            </div>
-            <div class="app-graf--receitas">
-                <h1>Gráfico receitas de Abril</h1>
-            </div>
-            <div class="app-despesas">
-                <h1>Adicionar despesa</h1>
-                <form class="form" id="formdespesa">
-                    <label for="descricao">Descrição da despesa:</label><br>
-                    <input class="input" type="text" id="descricao" name="descricao" placeholder="Ex: Almoço com amigos"><br>
-                    <label for="categoria">Categoria:</label><br>
-                    <input class="input" type="text" id="categoria" name="categoria" placeholder="Ex: Alimentação"><br>
-                    <label for="valor">Valor:</label><br>
-                    <input class="input" type="number" id="valor" name="valor" placeholder="R$"><br>
-                    <label for="data">Data:</label><br>
-                    <input class="input" type="date" id="data" name="data"><br>
-                    <input class="botao" type="submit" value="Adicionar despesa">
-                </form>
-                <div class="despesas-lista" id="despesas"></div>
-            </div>
-            <div class="app-receitas">
-                <h1>Adicionar receita</h1>
+            <div class="app-categorias--receitas">
+                <h1 class="categorias-receitas-cabecalho"><i class="fa-solid fa-tag"></i>Categorias de receitas</h1>
             </div>
         </div>
 

@@ -57,6 +57,13 @@ h1 {
   margin: 0 0 2rem 0;
 }
 
+h4 {
+  font-family: var(--font-family);
+  font-size: var(--font-s-sm);
+  font-weight: var(--font-w-regular);
+  line-height: 148%;
+}
+
 label {
   font-family: var(--font-family);
   font-size: var(--font-s-m);
@@ -72,6 +79,11 @@ label {
   --color-light-grey: #EAEAEA;
   --color-medium-blue: #4762AE;
   --color-dark-blue: #252C46;
+  --color-red: #EA4A4A;
+  --color-light-red: #FFE2E2;
+  --color-green: #5EBC4F;
+  --color-light-green: #CCFFC2;
+
   /* font-family */
   --font-family: "Roboto", sans-serif;
   /* font-s = font-size */
@@ -95,26 +107,35 @@ label {
 .container {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
   background-color: var(--color-light-grey);
 }
 
 /* nav */
 
 .nav {
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-dark-blue);
+  font-family: var(--font-family);
+  color: var(--color-light-grey);
   max-width: 230px;
   min-width: 230px;
   padding: 3rem;
 }
 
 .nav-logo {
-  font-family: var(--font-family);
-  color: var(--color-light-grey);
   font-size: 30px;
 }
 
-/* Buttons */
+.nav-infoGrupo {
+  margin-top: auto;
+}
+
+.nav-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
 .nav-botoes {
   display: flex;
@@ -122,7 +143,6 @@ label {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 1rem;
-  font-family: var(--font-family);
   font-weight: var(--font-w-medium);
   font-size: var(--font-s-m);
 }
@@ -131,7 +151,6 @@ label {
   display: flex;
   gap: 1rem;
   align-items: center;
-  color: var(--color-light-grey);
   border-radius: 12px;
   width: 100%;
   text-align: left;
@@ -147,23 +166,24 @@ label {
   transition: all 0.3s;
 }
 
-
 /* app */
 
 .app {
-  margin: 3rem 3rem 4rem 2rem;
+  margin: 3rem 3rem 4rem 3rem;
   width: 100%;
   display: grid;
   gap: 30px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 5% 15% 30% 50%;
+  grid-template-rows: 0.1fr 0.4fr 1fr 2fr;
   /* grid-auto-rows: auto; */
   grid-template-areas:
     "app-data app-data"
     "app-overview app-overview"
-    "app-graph--despesas app-graph--receitas"
-    "despesas receitas";
+    "app-graf--despesas app-graf--receitas"
+    "app-despesas app-receitas";
 }
+
+/* app card data*/
 
 .app-data {
   grid-area: app-data;
@@ -172,6 +192,8 @@ label {
   padding: 1rem;
 }
 
+/* app card visao geral*/
+
 .app-overview {
   grid-area: app-overview;
   background-color: var(--color-white);
@@ -179,34 +201,31 @@ label {
   padding: 1rem;
 }
 
-.app-graph--despesas {
-  grid-area: app-graph--despesas;
+/* app card grafico despesas*/
+
+.app-graf--despesas {
+  grid-area: app-graf--despesas;
   background-color: var(--color-white);
   border-radius: 12px;
   padding: 1rem;
 }
 
-.app-graph--receitas {
-  grid-area: app-graph--receitas;
+/* app card grafico receitas*/
+
+.app-graf--receitas {
+  grid-area: app-graf--receitas;
   background-color: var(--color-white);
   border-radius: 12px;
   padding: 1rem;
 }
 
-.despesas {
-  grid-area: despesas;
+/* app card despesas*/
+
+.app-despesas {
+  grid-area: app-despesas;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* background-color: var(--color-light-grey); */
-  background-color: var(--color-white);
-  /* width: 400px; */
-  border-radius: 12px;
-  padding: 1rem;
-}
-
-.receitas {
-  grid-area: receitas;
+  align-items: flex-start;
   background-color: var(--color-white);
   border-radius: 12px;
   padding: 1rem;
@@ -246,10 +265,64 @@ label {
   font-family: var(--font-family);
   line-height: calc(100% + 1rem);
   font-size: var(--font-s-2m);
-  /* background-color: var(--color-light-grey); */
   width: 400px;
-  /* border: 1px solid var(--color-grey); */
   margin: 2rem auto 0rem auto;
-  /* padding: 2rem; */
   border-radius: 12px;
+}
+
+/* app card receitas*/
+
+.app-receitas {
+  grid-area: app-receitas;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* app pagina categorias*/
+
+.app-categorias {
+  margin: 3rem 3rem 4rem 3rem;
+  width: 100%;
+  display: grid;
+  height: 100vh;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "app-categorias--despesas app-categorias--receitas";
+}
+
+/* app categorias despesas*/
+
+.app-categorias--despesas {
+  grid-area: app-categorias--despesas;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 1rem;
+  height: fit-content;
+}
+
+.categorias-despesas-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-red);
+}
+
+/* app categorias receitas*/
+
+.app-categorias--receitas {
+  grid-area: app-categorias--receitas;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 1rem;
+  height: fit-content;
+}
+
+.categorias-receitas-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-green);
 }
