@@ -32,7 +32,8 @@ function exibirDespesa() {
     divDespesas.innerHTML = '';
     despesas.forEach((despesa, index) => {
         let despesaDiv = document.createElement('div');
-        despesaDiv.textContent = `Despesa ${index + 1}: Descrição: ${despesa.descricao}. Categoria: ${despesa.categoria}. Valor: R$ ${despesa.valor}. Data: ${despesa.data}`;
+        const { descricao, categoria, valor, data } = despesa;
+        despesaDiv.textContent = `Despesa ${index + 1}: Descrição: ${descricao}. Categoria: ${categoria}. Valor: R$ ${valor}. Data: ${data}`;
         divDespesas.appendChild(despesaDiv);
     });
 }
