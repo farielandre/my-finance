@@ -76,6 +76,7 @@ label {
   --color-black: #000000;
   --color-white: #ffffff;
   --color-grey: #6B6B6B;
+  --color-medium-grey: #A4A4A4;
   --color-light-grey: #EAEAEA;
   --color-medium-blue: #4762AE;
   --color-dark-blue: #252C46;
@@ -282,6 +283,8 @@ label {
 /* app pagina categorias*/
 
 .app-categorias {
+  font-family: var(--font-family);
+  background-color: var(--color-light-grey);
   margin: 3rem 3rem 4rem 3rem;
   width: 100%;
   display: grid;
@@ -295,11 +298,8 @@ label {
 
 /* app categorias despesas*/
 
-.app-categorias--despesas {
+.app-categorias-despesas {
   grid-area: app-categorias--despesas;
-  background-color: var(--color-white);
-  border-radius: 12px;
-  padding: 1rem;
   height: fit-content;
 }
 
@@ -310,13 +310,67 @@ label {
   color: var(--color-red);
 }
 
+.categorias-header {
+  font-weight: var(--font-w-regular);
+  font-size: var(--font-s-sm);
+  color: var(--color-medium-grey);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px 13px 0;
+}
+
+.categorias-lista {
+  list-style-type: none;
+  padding: 0;
+}
+
+.categorias-item {
+  background-color: var(--color-white);
+  margin-bottom: 10px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categoria-nome {
+  font-weight: var(--font-w-medium);
+  margin-bottom: 5px;
+}
+
+.categorias-botoes-acoes {
+  display: flex;
+}
+
+.botao {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao.editar {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.botao.excluir {
+  background-color: #f44336;
+  color: white;
+}
+
+.botao:hover {
+  background-color: #555;
+}
+
 /* app categorias receitas*/
 
-.app-categorias--receitas {
+.app-categorias-receitas {
   grid-area: app-categorias--receitas;
-  background-color: var(--color-white);
-  border-radius: 12px;
-  padding: 1rem;
   height: fit-content;
 }
 
