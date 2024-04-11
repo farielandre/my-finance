@@ -1,0 +1,242 @@
+/* Reset */
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+h1,
+h2,
+h3,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+::placeholder {
+  color: #b8b8b8;
+  font-size: var(--font-s-sm);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hide {
+  display: none;
+}
+
+h1 {
+  font-family: var(--font-family);
+  font-size: var(--font-s-lg);
+  font-weight: var(--font-w-medium);
+  margin: 0 0 2rem 0;
+}
+
+h4 {
+  font-family: var(--font-family);
+  font-size: var(--font-s-sm);
+  font-weight: var(--font-w-regular);
+  line-height: 148%;
+}
+
+label {
+  font-family: var(--font-family);
+  font-size: var(--font-s-m);
+  font-weight: var(--font-w-medium);
+}
+
+/* Root variables */
+:root {
+    /* font-family */
+    --font-family: "Roboto", sans-serif;
+  /* font-color */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-grey: #6B6B6B;
+  --color-medium-grey: #A4A4A4;
+  --color-light-grey: #EAEAEA;
+  --color-medium-blue: #4762AE;
+  --color-dark-blue: #252C46;
+  --color-red: #EA4A4A;
+  --color-light-red: #FFE2E2;
+  --color-green: #5EBC4F;
+  --color-light-green: #CCFFC2;
+  /* font-s = font-size */
+  --font-s-4xl: 3rem;
+  --font-s-3xl: 2.5rem;
+  --font-s-2xl: 2rem;
+  --font-s-lg: 1.5rem;
+  --font-s-m: 1rem;
+  --font-s-sm: 0.875rem;
+  /* font-w = font-weight */
+  --font-w-black: 900;
+  --font-w-xbold: 800;
+  --font-w-bold: 700;
+  --font-w-medium: 500;
+  --font-w-regular: 400;
+  --font-w-light: 300;
+}
+
+/* app pagina categorias*/
+
+.app-categorias {
+  font-family: var(--font-family);
+  background-color: var(--color-light-grey);
+  margin: 3rem 3rem 4rem 3rem;
+  width: 100%;
+  display: grid;
+  height: 100vh;
+  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "app-categorias--despesas app-categorias--receitas";
+}
+
+/* app categorias despesas*/
+
+.app-categorias-despesas {
+  grid-area: app-categorias--despesas;
+  height: fit-content;
+}
+
+.categorias-despesas-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-red);
+}
+
+.categorias-header {
+  font-weight: var(--font-w-regular);
+  font-size: var(--font-s-sm);
+  color: var(--color-medium-grey);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30px 13px 0;
+}
+
+.categorias-item {
+  background-color: var(--color-white);
+  color: var(--color-grey);
+  margin-bottom: 10px;
+  border: none;
+  padding: 10px 15px 10px 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categorias-item:hover {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  transition: all 0.3s ease;
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.categoria-nome {
+  font-weight: var(--font-w-medium);
+}
+
+.categorias-botoes-acoes {
+  display: flex;
+  gap: 5px;
+}
+
+.acao-botao {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.acao-botao.editar {
+  color: var(--color-black);
+}
+
+.acao-botao.editar:hover {
+  background-color: var(--color-medium-grey);
+  color: var(--color-white);
+}
+
+.acao-botao.excluir {
+  color: var(--color-red);
+}
+
+.acao-botao.excluir:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.categorias-despesas-add {
+  /* font-weight: var(--font-w-bold);
+  font-size: 20px; */
+  max-width: 45px;
+  font-size: 45px;
+  color: var(--color-red);
+  margin-top: 30px;
+  /* gap: 1rem; */
+}
+
+.categorias-despesas-add:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.2) rotate(90deg);
+  cursor: pointer;
+}
+
+/* app categorias receitas*/
+
+.app-categorias-receitas {
+  grid-area: app-categorias--receitas;
+  height: fit-content;
+}
+
+.categorias-receitas-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-green);
+}
+
+.categorias-receitas-add {
+  /* font-weight: var(--font-w-bold);
+  font-size: 20px; */
+  max-width: 45px;
+  font-size: 45px;
+  color: var(--color-green);
+  margin-top: 30px;
+  /* gap: 1rem; */
+}
+
+.categorias-receitas-add:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.2) rotate(90deg);
+  cursor: pointer;
+}
