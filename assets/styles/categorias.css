@@ -110,7 +110,7 @@ label {
   margin: 3rem 3rem 4rem 3rem;
   width: 100%;
   display: grid;
-  height: 100vh;
+  min-height: 100vh;
   gap: 40px;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
