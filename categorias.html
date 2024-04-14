@@ -53,7 +53,7 @@
                     <p>Nome da categoria</p>
                     <p>Ações</p>
                 </div>
-                <ul class="categorias-lista">
+                <ul class="categorias-despesas-lista">
                     <!-- aqui entram as categorias de despesas -->
                 </ul>
                 <h2 class="categorias-despesas-add" title="Criar nova categoria em Despesas"><i
@@ -65,7 +65,7 @@
                     <p>Nome da categoria</p>
                     <p>Ações</p>
                 </div>
-                <ul class="categorias-lista">
+                <ul class="categorias-receitas-lista">
                     <!-- aqui entram as categorias de receitas -->
                 </ul>
                 <h2 class="categorias-receitas-add" title="Criar nova categoria em Receitas"><i
@@ -73,8 +73,17 @@
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div id="categorias-popup" class="categorias-popup">
+        <div class="categorias-popup-conteudo">
+            <span class="categorias-popup-fechar">&times;</span>
+            <input type="text" id="categoryName" placeholder="Digite o nome da categoria">
+            <button id="saveCategory">Salvar</button>
+        </div>
+    </div>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/categorias.js"></script>
+    <script src="./assets/js/categorias-despesas.js"></script>
+    <script src="./assets/js/categorias-receitas.js"></script>
 </body>
 
 </html>
