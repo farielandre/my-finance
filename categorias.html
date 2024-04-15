@@ -53,10 +53,10 @@
                     <p>Nome da categoria</p>
                     <p>Ações</p>
                 </div>
-                <ul class="categorias-despesas-lista">
+                <ul id="categorias-despesas-lista">
                     <!-- aqui entram as categorias de despesas -->
                 </ul>
-                <h2 class="categorias-despesas-add" title="Criar nova categoria em Despesas"><i
+                <h2 class="categorias-despesas-add" id="categorias-despesas-add" title="Criar nova categoria em Despesas"><i
                         class="fa-solid fa-circle-plus"></i></h2>
             </div>
             <div class="app-categorias-receitas">
@@ -65,25 +65,37 @@
                     <p>Nome da categoria</p>
                     <p>Ações</p>
                 </div>
-                <ul class="categorias-receitas-lista">
+                <ul id="categorias-receitas-lista">
                     <!-- aqui entram as categorias de receitas -->
                 </ul>
-                <h2 class="categorias-receitas-add" title="Criar nova categoria em Receitas"><i
+                <h2 class="categorias-receitas-add" id="categorias-receitas-add" title="Criar nova categoria em Receitas"><i
                         class="fa-solid fa-circle-plus"></i></h2>
             </div>
         </div>
     </div>
-    <!-- Modal -->
-    <div id="categorias-popup" class="categorias-popup">
-        <div class="categorias-popup-conteudo">
-            <span class="categorias-popup-fechar">&times;</span>
-            <input type="text" id="categoryName" placeholder="Digite o nome da categoria">
-            <button id="saveCategory">Salvar</button>
+    <!-- Popup -->
+    <div class="categorias-popup-despesas" id="categorias-popup-despesas">
+        <div class="categorias-popup-box">
+            <div class="categoria-popup-cabecalho">
+                <p class="categorias-popup-titulo">Adicionar Categoria em Despesas</p>
+                <span class="categorias-popup-fechar-despesa"><i class="fa-solid fa-xmark fa-lg"></i></span>
+            </div>
+            <input type="text" class="categoria-popup-input" id="categoria-nome-despesa" placeholder="Insira o nome da nova categoria"></input><br>
+            <button class="categorias-popup-botao" id="categorias-popup-salvar-despesa">Salvar</button>
+        </div>
+    </div>
+    <div class="categorias-popup-receitas" id="categorias-popup-receitas">
+        <div class="categorias-popup-box">
+            <div class="categoria-popup-cabecalho">
+                <p class="categorias-popup-titulo">Adicionar Categoria em Receitas</p>
+                <span class="categorias-popup-fechar-receita"><i class="fa-solid fa-xmark fa-lg"></i></span>
+            </div>
+            <input type="text" class="categoria-popup-input" id="categoria-nome-receita" placeholder="Insira o nome da nova categoria"></input><br>
+            <button class="categorias-popup-botao" id="categorias-popup-salvar-receita">Salvar</button>
         </div>
     </div>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/categorias-despesas.js"></script>
-    <script src="./assets/js/categorias-receitas.js"></script>
+    <script src="./assets/js/categorias.js"></script>
 </body>
 
 </html>

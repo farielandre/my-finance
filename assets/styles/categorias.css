@@ -205,12 +205,6 @@ label {
   /* gap: 1rem; */
 }
 
-.categorias-despesas-add:hover {
-  transition: all 0.3s ease;
-  transform: scale(1.2) rotate(90deg);
-  cursor: pointer;
-}
-
 /* app categorias receitas*/
 
 .app-categorias-receitas {
@@ -235,6 +229,7 @@ label {
   /* gap: 1rem; */
 }
 
+.categorias-despesas-add:hover,
 .categorias-receitas-add:hover {
   transition: all 0.3s ease;
   transform: scale(1.2) rotate(90deg);
@@ -243,7 +238,9 @@ label {
 
 /* Pop-up */
 
-.categorias-popup {
+.categorias-popup-despesas, .categorias-popup-receitas {
+  font-family: var(--font-family);
+  color: var(--color-grey);
   display: none;
   position: fixed;
   z-index: 1;
@@ -252,27 +249,66 @@ label {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #252C4699;
 }
 
-.categorias-popup-conteudo {
-  background-color: #fefefe;
+.categorias-popup-box {
+  background-color: var(--color-white);
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 50%;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.categorias-popup-fechar {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.categoria-popup-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
+/* .categorias-popup-fechar {
+  font-weight: var(--font-w-bold);
+} */
 
-.categorias-popup-fechar:hover,
-.categorias-popup-fechar:focus {
-  color: black;
+.categorias-popup-fechar-despesa:hover,
+.categorias-popup-fechar-despesa:focus,
+.categorias-popup-fechar-receita:hover,
+.categorias-popup-fechar-receita:focus {
+  color: var(--color-black);
   text-decoration: none;
+  cursor: pointer;
+}
+
+.categorias-popup-titulo {
+  font-weight: var(--font-w-medium);
+  font-size: 18px;
+}
+
+.categoria-popup-input {
+  color: var(--color-black);
+  border-radius: 12px;
+  padding-left: 1rem;
+  height: 38px;
+  width: calc(100% - 20px);
+  border: 1px solid var(--color-grey);
+  margin-bottom: 25px;
+}
+
+.categorias-popup-botao {
+  font-weight: var(--font-w-medium);
+  font-size: var(--font-s-2m);
+  background: var(--color-medium-blue);
+  color: var(--color-light-grey);
+  border-radius: 12px;
+  border: none;
+  height: 38px;
+  padding: 0 1rem 0 1rem;
+}
+
+.categorias-popup-botao:hover {
+  background: var(--color-dark-blue);
+  color: var(--color-light-grey);
+  transition: all 0.3s;
   cursor: pointer;
 }
