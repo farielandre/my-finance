@@ -54,10 +54,12 @@
             </div>
             <div class="app-graf--despesas">
                 <h1>Gráfico despesas de Abril</h1>
-            </div>
-            <div class="app-graf--receitas">
+                <canvas id="despesasChart"></canvas>
+              </div>
+              <div class="app-graf--receitas">
                 <h1>Gráfico receitas de Abril</h1>
-            </div>
+                <canvas id="receitasChart"></canvas>
+              </div>
             <div class="app-despesas">
                 <h1>Adicionar despesa</h1>
                 <form class="form" id="formdespesa">
@@ -79,7 +81,9 @@
         </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/graficos.js"></script>
 </body>
 
 </html>
