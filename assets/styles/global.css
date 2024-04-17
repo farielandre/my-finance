@@ -227,7 +227,7 @@ label {
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--color-white);
-  border-radius: 12px;
+  border-radius: 1px;
   padding: 1rem;
 }
 
@@ -277,4 +277,57 @@ label {
   background-color: var(--color-white);
   border-radius: 12px;
   padding: 1rem;
+}
+
+/* Visão geral 2 */
+
+#visionApril {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.divisionBalance {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#positionIcon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+
+}
+
+#descriptionValue {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0;
+}
+
+#valuePositive{
+  margin: 0;
+}
+
+#descriptionH4{
+  color: var(--color-grey);
+}
+#negative{
+  color: var(--color-red);
+}
+#positive{
+  color: var(--color-green);
+}
+#estavel{
+  color: var(--color-grey);
 }

@@ -49,22 +49,65 @@
             <div class="app-data">
                 <h1>Seletor de ano e/ou mês</h1>
             </div>
+
+
+
             <div class="app-overview">
-                <h1>Visão geral de Abril</h1>
+
+                <div id="visionApril">
+
+                    <div id="negative" class="divisionBalance">
+                        <div id="positionIcon">
+                            <img src="assets/js/image/icon/negative.svg" alt="">
+                            <div id="descriptionValue">
+                                <h4 id="descriptionH4">Despesas de Abril</h4>
+                                <h1 id="valuePositive">R$ 3502,00</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="positive" class="divisionBalance">
+                        <div id="positionIcon">
+                            <img src="assets/js/image/icon/positive.svg" alt="">
+                            <div id="descriptionValue">
+                                <h4 id="descriptionH4">Receitas de Abril</h4>
+                                <h1 id="valuePositive">R$ 5103,50</h1>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div id="estavel" class="divisionBalance">
+                        <div id="positionIcon">
+                            <img src="assets/js/image/icon/estavel.svg" alt="">
+                            <div id="descriptionValue">
+                                <h4 id="descriptionH4">Balanço</h4>
+                                <h1 id="valuePositive">R$ 1601,50</h1>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
             </div>
+
+
             <div class="app-graf--despesas">
                 <h1>Gráfico despesas de Abril</h1>
                 <canvas id="despesasChart"></canvas>
-              </div>
-              <div class="app-graf--receitas">
+            </div>
+            <div class="app-graf--receitas">
                 <h1>Gráfico receitas de Abril</h1>
                 <canvas id="receitasChart"></canvas>
-              </div>
+            </div>
             <div class="app-despesas">
                 <h1>Adicionar despesa</h1>
                 <form class="form" id="formdespesa">
                     <label for="descricao">Descrição da despesa:</label><br>
-                    <input class="input" type="text" id="descricao" name="descricao" placeholder="Ex: Almoço com amigos"><br>
+                    <input class="input" type="text" id="descricao" name="descricao"
+                        placeholder="Ex: Almoço com amigos"><br>
                     <label for="categoria">Categoria:</label><br>
                     <input class="input" type="text" id="categoria" name="categoria" placeholder="Ex: Alimentação"><br>
                     <label for="valor">Valor:</label><br>
