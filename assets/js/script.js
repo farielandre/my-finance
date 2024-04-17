@@ -15,7 +15,6 @@ formDespesa.addEventListener('submit', function(e) {
     exibirDespesa();
 });
 
-
 function getInputValue(inputElement) {
     return inputElement.value.trim() || "Não informado";
 }
