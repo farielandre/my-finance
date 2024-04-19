@@ -13,6 +13,7 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet' />
     <title>MyFinance - Sistema de Controle Financeiro - Visão mensal</title>
 </head>
 
@@ -45,73 +46,146 @@
                 </a>
             </div>
         </nav>
+
         <div class="app">
+
+            <!-- Seletor de ano e/ou mês -->
+
             <div class="app-data">
-                <h1>Seletor de ano e/ou mês</h1>
-            </div>
-            <div class="app-overview">
-
-                <div id="visionMarço">
-
-                    <div id="negative" class="divisionBalance">
-                        <div id="positionIcon">
-                            <img src="assets/js/image/icon/negative.svg" alt="">
-                            <div id="descriptionValue">
-                                <h4 id="descriptionH4">Despesas de Abril</h4>
-                                <h1 id="valuePositive">R$ 3502,00</h1>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="positive" class="divisionBalance">
-                        <div id="positionIcon">
-                            <img src="assets/js/image/icon/positive.svg" alt="">
-                            <div id="descriptionValue">
-                                <h4 id="descriptionH4">Receitas de Abril</h4>
-                                <h1 id="valuePositive">R$ 5103,50</h1>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="estavel" class="divisionBalance">
-                        <div id="positionIcon">
-                            <img src="assets/js/image/icon/estavel.svg" alt="">
-                            <div id="descriptionValue">
-                                <h4 id="descriptionH4">Balanço</h4>
-                                <h1 id="valuePositive">R$ 1601,50</h1>
-                            </div>
-                        </div>
-                    </div>
-
- 
+                <div>
+                    <p><i class="fa-regular fa-calendar fa-xl"></i></p>
                 </div>
+                <div>
+                    <input placeholder="Mês" id="m-mes_filtro" type="number" />
+                </div>
+                <div>
+                    <input placeholder="Ano" id="m-ano_filtro" type="number" />
+                </div>
+            </div>
 
+            <!-- Overview do mês -->
+
+            <div class="app-overview">
+                <div class="overview-despesas">
+                    <img src="./assets/images/negative.svg" alt="">
+                    <div id="descriptionValue">
+                        <h4 id="descriptionH4">Despesas de Abril</h4>
+                        <h1 id="expenses">R$ 3502,00</h1>
+                    </div>
+                </div>
+                <div class="overview-despesas">
+                    <img src="./assets/images/positive.svg" alt="">
+                    <div id="descriptionValue">
+                        <h4 id="descriptionH4">Despesas de Abril</h4>
+                        <h1 id="incomes">R$ 3502,00</h1>
+                    </div>
+                </div>
+                <div class="overview-despesas">
+                    <img src="./assets/images/estavel.svg" alt="">
+                    <div id="descriptionValue">
+                        <h4 id="descriptionH4">Despesas de Abril</h4>
+                        <h1 id="balance">R$ 3502,00</h1>
+                    </div>
+                </div>
             </div>
+
+            <!-- Gráfico despesas -->
+
             <div class="app-graf--despesas">
-                <h1>Gráfico despesas de Abril</h1>
-                <canvas id="despesasChart"></canvas>
+                <h1>Gráfico despesas</h1>
+                <canvas id="chart_expenses"></canvas>
             </div>
+
+            <!-- Gráfico receitas -->
+
             <div class="app-graf--receitas">
-                <h1>Gráfico receitas de Abril</h1>
-                <canvas id="receitasChart"></canvas>
+                <h1>Gráfico receitas</h1>
+                <canvas id="chart_incomes"></canvas>
             </div>
+
+            <!-- Box despesas -->
 
             <div class="app-despesas">
-                            <label for="valor">Valor:</label><br>
-                            <input class="input" type="number" id="valor" name="valor" placeholder="R$"><br>
-                            <label for="data">Data:</label><br>
-                            <input class="input" type="date" id="data" name="data"><br>
-                            <input class="botao" type="submit" value="Adicionar receita">
-                        </form>
+                <!-- Add e busca despesas -->
+                <div class="despesas-botao-busca">
+                    <button class="despesas-add-botao" onclick="openModal('button1')"><i
+                            class="fa-solid fa-circle-plus"></i>Adicionar despesa</button>
+                    <input placeholder="Procurar" id="m-search_expenses" type="text" />
+                </div>
+                <!-- Lista de despesas -->
+                <div class="tabela-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tabela-itens">
+                            <!-- Os dados da tabela serão inseridos aqui -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Box receitas -->
+
+            <div class="app-receitas">
+                <!-- Add e busca receitas -->
+                <div class="receitas-botao-busca">
+                    <button class="receitas-add-botao" onclick="openModal('button2')"><i
+                            class="fa-solid fa-circle-plus"></i>Adicionar receita</button>
+                    <input placeholder="Procurar" id="m-search_incomes" type="text" />
+                </div>
+                <!-- Lista de receitas -->
+                <div>
+                    <div class="tabela-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                    <th>Data</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody1 class="tabela-itens">
+                                <!-- Os dados da tabela serão inseridos aqui -->
+                            </tbody1>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Popup incluir despesas e receitas-->
+
+    <div class="modal-container">
+        <div class="modal1">
+            <div class="modal1-cabecalho">
+                <p class="modal1-titulo">Adicionar novo item</p>
+                <span class="modal1-fechar"><i class="fa-solid fa-xmark fa-lg"></i></span>
+            </div>
+            <form>
+                <label for="m-valor">Valor</label>
+                <input id="m-valor" type="number" placeholder="R$" required />
+                <label for="m-descricao">Descrição</label>
+                <input id="m-descricao" type="text" placeholder="Ex.: Alimentação" required />
+                <label for="m-data">
+                    <Datag>Data</Datag>
+                </label>
+                <input id="m-data" type="date" required />
+                <button class="btnSalvar" id="btnSalvar">Salvar</button>
+            </form>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/graficos.js"></script>
-    <script src="./assets/js/despesas.js"></script>
+
 </body>
 
 </html>

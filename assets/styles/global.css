@@ -30,6 +30,10 @@ a:hover {
   color: inherit;
 }
 
+ul {
+  list-style-type: none;
+}
+
 button {
   border: none;
   background: none;
@@ -69,6 +73,7 @@ label {
   font-size: var(--font-s-m);
   font-weight: var(--font-w-medium);
 }
+
 
 /* Root variables */
 :root {
@@ -169,7 +174,7 @@ label {
 /* app */
 
 .app {
-  margin: 3rem 3rem 4rem 3rem;
+  padding: 3rem 3rem 4rem 3rem;
   width: 100%;
   display: grid;
   gap: 30px;
@@ -187,6 +192,8 @@ label {
 
 .app-data {
   grid-area: app-data;
+  display: flex;
+  gap: 10px;
   background-color: var(--color-white);
   border-radius: 12px;
   padding: 1rem;
@@ -196,101 +203,14 @@ label {
 
 .app-overview {
   grid-area: app-overview;
-  background-color: var(--color-white);
-  border-radius: 12px;
-  padding: 1rem;
-}
-
-/* app card grafico despesas*/
-
-.app-graf--despesas {
-  grid-area: app-graf--despesas;
-  background-color: var(--color-white);
-  border-radius: 12px;
-  padding: 1rem;
-}
-
-/* app card grafico receitas*/
-
-.app-graf--receitas {
-  grid-area: app-graf--receitas;
-  background-color: var(--color-white);
-  border-radius: 12px;
-  padding: 1rem;
-}
-
-/* app card despesas*/
-
-.app-despesas {
-  grid-area: app-despesas;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: var(--color-white);
-  border-radius: 1px;
-  padding: 1rem;
-}
-
-.input {
-  font-family: var(--font-family);
-  color: var(--color-black);
-  border-radius: 12px;
-  padding-left: 1rem;
-  height: 38px;
-  border: 1px solid var(--color-grey);
-  margin: 3px 0 1rem 0;
-}
-
-.botao {
-  font-family: var(--font-family);
-  font-weight: var(--font-w-medium);
-  font-size: var(--font-s-2m);
-  background: var(--color-medium-blue);
-  color: var(--color-light-grey);
-  border-radius: 12px;
-  border: none;
-  height: 38px;
-  margin-top: 1rem;
-  padding: 0 1rem 0 1rem;
-}
-
-.botao:hover {
-  background: var(--color-dark-blue);
-  color: var(--color-light-grey);
-  transition: all 0.3s;
-  cursor: pointer;
-}
-
-.despesas-lista {
-  font-family: var(--font-family);
-  line-height: calc(100% + 1rem);
-  font-size: var(--font-s-2m);
-  width: 400px;
-  margin: 2rem auto 0rem auto;
-  border-radius: 12px;
-}
-
-/* app card receitas*/
-
-.app-receitas {
-  grid-area: app-receitas;
+  gap: 10px;
   background-color: var(--color-white);
   border-radius: 12px;
   padding: 1rem;
 }
 
-/* Visão Março */
-
-#visionMarço {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.divisionBalance {
+.overview-despesas {
   height: 100%;
   width: 30%;
   display: flex;
@@ -304,7 +224,6 @@ label {
   flex-direction: row;
   align-items: center;
   gap: 1em;
-
 }
 
 #descriptionValue {
@@ -332,9 +251,169 @@ label {
   color: var(--color-grey);
 }
 
+/* app card grafico despesas*/
+
+.app-graf--despesas {
+  grid-area: app-graf--despesas;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+#chart_expenses {
+  max-width: 100%;
+}
+
+/* app card grafico receitas*/
+
+.app-graf--receitas {
+  grid-area: app-graf--receitas;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+#chart_incomes {
+  max-width: 100%;
+}
+
+/* app card despesas*/
+
+.app-despesas {
+  grid-area: app-despesas;
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  padding: 1rem;
+  border-radius: 12px;
+  height: fit-content;
+}
+
+.despesas-botao-busca {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.despesas-add-botao {
+  font-weight: var(--font-w-bold);
+  max-width: 45px;
+  color: var(--color-red);
+  margin-top: 30px;
+  gap: 1rem;
+}
+
+.fa-circle-plus {
+  font-size: 45px;
+}
+
+.fa-circle-plus:hover,
+.fa-circle-plus:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.2) rotate(90deg);
+  cursor: pointer;
+}
+
+/* app card receitas*/
+
+.app-receitas {
+  grid-area: app-receitas;
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  padding: 1rem;
+  border-radius: 12px;
+  height: fit-content;
+}
+
+.receitas-botao-busca {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.receitas-add-botao {
+  font-weight: var(--font-w-bold);
+  max-width: 45px;
+  color: var(--color-green);
+  margin-top: 30px;
+  gap: 1rem;
+}
+
+/* Lista de receitas e despesas */
+
+.tabela-container {
+  margin: 0px;
+}
+
+table {
+  font-family: var(--font-family);
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+thead {
+  font-weight: var(--font-w-regular);
+  font-size: var(--font-s-sm);
+  color: var(--color-medium-grey);
+  margin: 0 30px 13px 0;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #eaeaea;
+}
+
+.tabela-descricao {
+  font-weight: var(--font-w-bold);
+}
+
+.tabela-acoes {
+  display: flex;
+  gap: 5px;
+}
+
+.tabela-botao-acao {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tabela-botao-acao.editar {
+  color: var(--color-black);
+}
+
+.tabela-botao-acao.editar:hover {
+  background-color: var(--color-medium-grey);
+  color: var(--color-white);
+}
+
+.tabela-botao-acao.excluir {
+  color: var(--color-red);
+}
+
+.tabela-botao-acao.excluir:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
 
 
-.modal-background {
+/* Modal add receitas/despesas */
+
+.modal-container {
   font-family: var(--font-family);
   color: var(--color-grey);
   display: none;
@@ -345,55 +424,90 @@ label {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: #252C4699;
+  background-color: #252C4699;
 }
 
-.popup-despesas {
-  background-color: #FFFFFF;
+.modal1 {
+  background-color: var(--color-white);
   margin: 15% auto;
-  padding: 20px;
+  padding: 20px 30px 20px 20px;
   width: 400px;
   border-radius: 12px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: fit-content;
 }
 
-.popup-receitas {
-  display: none;
-  position: fixed;
-  z-index: 2;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.btnSalvar {
+  font-weight: var(--font-w-medium);
+  font-size: var(--font-s-2m);
+  background: var(--color-medium-blue);
+  color: var(--color-light-grey);
+  border-radius: 12px;
+  border: none;
+  margin-top: 10px;
+  height: 38px;
+  width: 100px;
+  padding: 0 1rem 0 1rem;
+  float: right;
 }
 
-.input {
+.btnSalvar:hover {
+  background: var(--color-dark-blue);
+  color: var(--color-light-grey);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.modal1 label {
+  font-size: 14px;
   width: 100%;
-  padding: 8px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
 }
 
-
-.botao {
-  background-color: #4CAF50; 
-  color: white; 
-  padding: 10px 20px; 
-  border: none; 
-  border-radius: 4px; 
-  cursor: pointer; 
-  text-align: center; 
-  text-decoration: none; 
-  display: inline-block; 
-  font-size: 16px; 
-  margin-bottom: 10px; 
+.modal1-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.botao:hover {
-  background-color: #45a049; 
+.modal1-fechar:hover,
+.modal1-fechar:focus {
+  color: var(--color-black);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal1-titulo {
+  font-weight: var(--font-w-medium);
+  font-size: 18px;
+}
+
+.modal1 input {
+  color: var(--color-black);
+  border-radius: 12px;
+  padding: 0 1rem 0 1rem;
+  height: 38px;
+  width: calc(100% - 20px);
+  border: 1px solid var(--color-grey);
+  margin-bottom: 10px;
+}
+
+.active {
+  display: flex;
+}
+
+.active .modal1 {
+  animation: modal .4s;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
