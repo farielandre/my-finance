@@ -54,7 +54,6 @@ function openModal(buttonId, edit = false, index = 0) {
 }
 
 function editItem(index) {
-
   openModal(undefined, true, index)
 }
 
@@ -72,7 +71,7 @@ function insertItem(selec, item, index) {
     <td class="tabela-descricao">${item.descricao}</td>
     <td>R$ ${item.valor}</td>
     <td>${item.data}</td>
-    <td class="tabela-acoes">
+    <td>
       <button class="tabela-botao-acao editar" title="Editar" onclick="editItem(${index})"><i class="fa-solid fa-pencil"></i></button>
       <button class="tabela-botao-acao excluir" title="Excluir" onclick="deleteItem(${index})"><i class="fa-solid fa-trash"></i></button>
     </td>

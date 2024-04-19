@@ -51,16 +51,10 @@
 
             <!-- Seletor de ano e/ou mês -->
 
-            <div class="app-data">
-                <div>
-                    <p><i class="fa-regular fa-calendar fa-xl"></i></p>
-                </div>
-                <div>
-                    <input placeholder="Mês" id="m-mes_filtro" type="number" />
-                </div>
-                <div>
-                    <input placeholder="Ano" id="m-ano_filtro" type="number" />
-                </div>
+            <div class="app-seletor">
+                <i class="fa-regular fa-calendar fa-xl"></i>
+                <input placeholder="Ano. EX: 2024" id="m-ano_filtro" type="number" />
+                <input placeholder="Mês. EX: 1, 2, 3..." id="m-mes_filtro" type="number" />
             </div>
 
             <!-- Overview do mês -->
@@ -68,23 +62,23 @@
             <div class="app-overview">
                 <div class="overview-despesas">
                     <img src="./assets/images/negative.svg" alt="">
-                    <div id="descriptionValue">
-                        <h4 id="descriptionH4">Despesas de Abril</h4>
-                        <h1 id="expenses">R$ 3502,00</h1>
+                    <div>
+                        <p class="overview-cabecalho-texto">Soma das despesas</h4>
+                        <p class="overview-despesas-numero" id="expenses">R$ 3502,00</p>
                     </div>
                 </div>
-                <div class="overview-despesas">
+                <div class="overview-receitas">
                     <img src="./assets/images/positive.svg" alt="">
-                    <div id="descriptionValue">
-                        <h4 id="descriptionH4">Despesas de Abril</h4>
-                        <h1 id="incomes">R$ 3502,00</h1>
+                    <div>
+                        <p class="overview-cabecalho-texto">Soma das receitas</h4>
+                        <p class="overview-receitas-numero" id="incomes">R$ 3502,00</p>
                     </div>
                 </div>
-                <div class="overview-despesas">
+                <div class="overview-balanco">
                     <img src="./assets/images/estavel.svg" alt="">
-                    <div id="descriptionValue">
-                        <h4 id="descriptionH4">Despesas de Abril</h4>
-                        <h1 id="balance">R$ 3502,00</h1>
+                    <div>
+                        <p class="overview-cabecalho-texto">Balanço</h4>
+                        <p class="overview-balanco-numero" id="balance">R$ 3502,00</p>
                     </div>
                 </div>
             </div>
@@ -104,16 +98,17 @@
             </div>
 
             <!-- Box despesas -->
-
             <div class="app-despesas">
-                <!-- Add e busca despesas -->
-                <div class="despesas-botao-busca">
-                    <button class="despesas-add-botao" onclick="openModal('button1')"><i
-                            class="fa-solid fa-circle-plus"></i>Adicionar despesa</button>
-                    <input placeholder="Procurar" id="m-search_expenses" type="text" />
+                <div class="despesas-heading">
+                    <button class="despesas-botao-add-icone" onclick="openModal('button1')">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <p class="despesas-botao-add-texto">Adicionar despesa</p>
+                    </button>
+                    <button class="despesas-busca"><i class="fa-solid fa-magnifying-glass fa-sm"></i>
+                        <input placeholder="Buscar uma despesa" id="m-search_expenses" type="text" /></button>
                 </div>
                 <!-- Lista de despesas -->
-                <div class="tabela-container">
+                <div class="app-despesas-lista">
                     <table>
                         <thead>
                             <tr>
@@ -123,39 +118,37 @@
                                 <th>Ações</th>
                             </tr>
                         </thead>
-                        <tbody class="tabela-itens">
+                        <tbody>
                             <!-- Os dados da tabela serão inseridos aqui -->
                         </tbody>
                     </table>
                 </div>
             </div>
-
             <!-- Box receitas -->
-
             <div class="app-receitas">
-                <!-- Add e busca receitas -->
-                <div class="receitas-botao-busca">
-                    <button class="receitas-add-botao" onclick="openModal('button2')"><i
-                            class="fa-solid fa-circle-plus"></i>Adicionar receita</button>
-                    <input placeholder="Procurar" id="m-search_incomes" type="text" />
+                <div class="receitas-heading">
+                    <button class="receitas-botao-add-icone" onclick="openModal('button2')">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <p class="receitas-botao-add-texto">Adicionar receita</p>
+                    </button>
+                    <button class="receitas-busca"><i class="fa-solid fa-magnifying-glass fa-sm"></i>
+                        <input placeholder="Buscar uma receita" id="m-search_incomes" type="text" /></button>
                 </div>
-                <!-- Lista de receitas -->
-                <div>
-                    <div class="tabela-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Descrição</th>
-                                    <th>Valor</th>
-                                    <th>Data</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody1 class="tabela-itens">
-                                <!-- Os dados da tabela serão inseridos aqui -->
-                            </tbody1>
-                        </table>
-                    </div>
+                <!-- Lista de despesas -->
+                <div class="app-receitas-lista">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody1>
+                            <!-- Os dados da tabela serão inseridos aqui -->
+                        </tbody1>
+                    </table>
                 </div>
             </div>
         </div>

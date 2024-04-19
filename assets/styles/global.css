@@ -77,8 +77,8 @@ label {
 
 /* Root variables */
 :root {
-    /* font-family */
-    --font-family: "Roboto", sans-serif;
+  /* font-family */
+  --font-family: "Roboto", sans-serif;
   /* font-color */
   --color-black: #000000;
   --color-white: #ffffff;
@@ -113,6 +113,7 @@ label {
   display: flex;
   flex-direction: row;
   background-color: var(--color-light-grey);
+  height: 1000px;
 }
 
 /* nav */
@@ -188,68 +189,99 @@ label {
     "app-despesas app-receitas";
 }
 
-/* app card data*/
+/* app card seletor*/
 
-.app-data {
+.app-seletor {
   grid-area: app-data;
+  font-family: var(--font-family);
   display: flex;
-  gap: 10px;
-  background-color: var(--color-white);
-  border-radius: 12px;
-  padding: 1rem;
+  align-items: center;
+  gap: 15px;
 }
 
-/* app card visao geral*/
+#m-ano_filtro {
+  font-weight: var(--font-w-bold);
+  font-size: 20px;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  width: 150px;
+}
+
+#m-mes_filtro {
+  font-weight: var(--font-w-bold);
+  font-size: 20px;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  width: 150px;
+}
+
+/* app card overview */
 
 .app-overview {
   grid-area: app-overview;
+  font-family: var(--font-family);
   display: flex;
+  justify-content: center;
   gap: 10px;
   background-color: var(--color-white);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1rem 0 1rem 0;
+  height: fit-content;
 }
 
 .overview-despesas {
-  height: 100%;
-  width: 30%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  gap: 12px;
   justify-content: flex-start;
-}
-
-#positionIcon {
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 1em;
+  width: 30%;
 }
 
-#descriptionValue {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin: 0;
-}
-
-#valuePositive{
-  margin: 0;
-}
-
-#descriptionH4{
+.overview-cabecalho-texto {
+  font-size: 14px;
+  font-weight: var(--font-w-regular);
   color: var(--color-grey);
 }
-#negative{
+
+.overview-despesas-numero {
+  font-size: 20px;
+  font-weight: var(--font-w-bold);
   color: var(--color-red);
 }
-#positive{
+
+.overview-receitas {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.overview-receitas-numero {
+  font-size: 20px;
+  font-weight: var(--font-w-bold);
   color: var(--color-green);
 }
-#estavel{
+
+.overview-balanco {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30%;
+}
+
+.overview-balanco-numero {
+  font-size: 20px;
+  font-weight: var(--font-w-bold);
   color: var(--color-grey);
 }
+
+
 
 /* app card grafico despesas*/
 
@@ -284,24 +316,28 @@ label {
   font-family: var(--font-family);
   display: flex;
   flex-direction: column;
-  background-color: var(--color-white);
-  padding: 1rem;
   border-radius: 12px;
   height: fit-content;
+  gap: 1rem;
 }
 
-.despesas-botao-busca {
+.despesas-heading {
+  background-color: var(--color-light-grey);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.despesas-add-botao {
-  font-weight: var(--font-w-bold);
-  max-width: 45px;
+.despesas-botao-add-icone {
   color: var(--color-red);
-  margin-top: 30px;
-  gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.despesas-botao-add-texto {
+  font-size: 20px;
+  font-weight: var(--font-w-medium);
 }
 
 .fa-circle-plus {
@@ -315,6 +351,26 @@ label {
   cursor: pointer;
 }
 
+.despesas-busca {
+  background-color: var(--color-white);
+  font-weight: var(--font-w-regular);
+  color: var(--color-grey);
+  padding: 0 5px 0 12px;
+  border-radius: 12px;
+}
+
+#m-search_expenses {
+  border: none;
+  margin: 0 10px 0 10px;
+  padding: 5px 0 5px 5px;
+}
+
+.app-despesas-lista {
+  padding: 1rem;
+  background-color: var(--color-white);
+  border-radius: 12px;
+}
+
 /* app card receitas*/
 
 .app-receitas {
@@ -322,31 +378,51 @@ label {
   font-family: var(--font-family);
   display: flex;
   flex-direction: column;
-  background-color: var(--color-white);
-  padding: 1rem;
   border-radius: 12px;
   height: fit-content;
+  gap: 1rem;
 }
 
-.receitas-botao-busca {
+.receitas-heading {
+  background-color: var(--color-light-grey);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.receitas-add-botao {
-  font-weight: var(--font-w-bold);
-  max-width: 45px;
+.receitas-botao-add-icone {
   color: var(--color-green);
-  margin-top: 30px;
-  gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.receitas-botao-add-texto {
+  font-size: 20px;
+  font-weight: var(--font-w-medium);
+}
+
+.receitas-busca {
+  background-color: var(--color-white);
+  font-weight: var(--font-w-regular);
+  color: var(--color-grey);
+  padding: 0 5px 0 12px;
+  border-radius: 12px;
+}
+
+#m-search_incomes {
+  border: none;
+  margin: 0 10px 0 5px;
+  padding: 5px 0 5px 10px;
+}
+
+.app-receitas-lista {
+  padding: 1rem;
+  background-color: var(--color-white);
+  border-radius: 12px;
 }
 
 /* Lista de receitas e despesas */
-
-.tabela-container {
-  margin: 0px;
-}
 
 table {
   font-family: var(--font-family);
@@ -362,7 +438,8 @@ thead {
   margin: 0 30px 13px 0;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   text-align: left;
 }
