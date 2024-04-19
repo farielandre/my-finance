@@ -49,12 +49,9 @@
             <div class="app-data">
                 <h1>Seletor de ano e/ou mês</h1>
             </div>
-
-
-
             <div class="app-overview">
 
-                <div id="visionApril">
+                <div id="visionMarço">
 
                     <div id="negative" class="divisionBalance">
                         <div id="positionIcon">
@@ -76,8 +73,6 @@
                         </div>
                     </div>
 
-
-
                     <div id="estavel" class="divisionBalance">
                         <div id="positionIcon">
                             <img src="assets/js/image/icon/estavel.svg" alt="">
@@ -88,12 +83,10 @@
                         </div>
                     </div>
 
-
+ 
                 </div>
 
             </div>
-
-
             <div class="app-graf--despesas">
                 <h1>Gráfico despesas de Abril</h1>
                 <canvas id="despesasChart"></canvas>
@@ -104,50 +97,6 @@
             </div>
 
             <div class="app-despesas">
-                <button class="botao" id="btnAbrirPopupDespesas">+</button>
-                <h1>Adicionar despesa</h1>
-                <div class="despesas-lista" id="despesas">
-                 
-                </div>
-                <div class="modal-background" id="modalPopupDespesas">
-                  <div class="popup-despesas">
-                    <form class="form" id="formDespesa">
-                      <label for="descricao">Descrição da despesa:</label><br>
-                      <input class="input" type="text" id="descricao" name="descricao" placeholder="Ex: Almoço com amigos"><br>
-                      <label for="categoria">Categoria:</label><br>
-                      <input class="input" type="text" id="categoria" name="categoria" placeholder="Ex: Alimentação"><br>
-                      <label for="valor">Valor:</label><br>
-                      <input class="input" type="number" id="valor" name="valor" placeholder="R$"><br>
-                      <label for="data">Data:</label><br>
-                      <input class="input" type="date" id="data" name="data"><br>
-                      <input class="botao" type="submit" value="Adicionar despesa">
-                    </form>
-                  </div>
-                </div>
-            </div>
-            
-        </div>
-
-      
-
-
-        <div class="app-receitas">
-
-            <button class="botao" id="btnAbrirPopupReceitas">+</button>
-            <h1>Adicionar receita</h1>
-            <form class="form" id="formReceita">
-                <!--Aqui seria a lista de receitas-->
-            </form>
-
-            <div class="modal-background" id="modalPopupReceitas">
-                <div id="formReceitaContainer" class="popup-receitas" style="display: none;">
-
-                    <div class="popup-receitas">
-                        <form class="form" id="formReceita">
-                            <label for="descricao">Descrição da receita:</label><br>
-                            <input class="input" type="text" id="descricao" name="descricao" placeholder="Ex:"><br>
-                            <label for="categoria">Categoria:</label><br>
-                            <input class="input" type="text" id="categoria" name="categoria" placeholder="Ex:"><br>
                             <label for="valor">Valor:</label><br>
                             <input class="input" type="number" id="valor" name="valor" placeholder="R$"><br>
                             <label for="data">Data:</label><br>
@@ -158,7 +107,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./assets/js/script.js"></script>
