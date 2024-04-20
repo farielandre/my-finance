@@ -38,20 +38,36 @@ const receitasLista = document.getElementById("categorias-receitas-lista");
 
 // Salvar categoria e fechar o popUp
 document.getElementById("categorias-popup-salvar-despesa").addEventListener("click", function () {
-    const categoriaNomeDespesa = document.getElementById("categoria-nome-despesa").value;
-    if (categoriaNomeDespesa.trim() !== "") {
-        adicionarCategoria(despesasLista, categoriaNomeDespesa);
-        popUpCategoriasDespesas.style.display = "none";
+    const categoriaNomeDespesa = document.getElementById("categoria-nome-despesa").value.trim();
+    if (categoriaNomeDespesa !== "") {
+        if (!categoriaJaExiste(despesasLista, categoriaNomeDespesa)) {
+            adicionarCategoria(despesasLista, categoriaNomeDespesa);
+            popUpCategoriasDespesas.style.display = "none";
+        } else {
+            alert("Essa categoria já existe!");
+        }
     }
 });
 
 document.getElementById("categorias-popup-salvar-receita").addEventListener("click", function () {
-    const categoriaNomeReceita = document.getElementById("categoria-nome-receita").value;
-    if (categoriaNomeReceita.trim() !== "") {
-        adicionarCategoria(receitasLista, categoriaNomeReceita);
-        popUpCategoriasReceitas.style.display = "none";
+    const categoriaNomeReceita = document.getElementById("categoria-nome-receita").value.trim();
+    if (categoriaNomeReceita !== "") {
+        if (!categoriaJaExiste(receitasLista, categoriaNomeReceita)) {
+            adicionarCategoria(receitasLista, categoriaNomeReceita);
+            popUpCategoriasReceitas.style.display = "none";
+        } else {
+            alert("Essa categoria já existe!");
+        }
     }
 });
+
+// Verificar se a categoria já existe na lista
+function categoriaJaExiste(lista, nome) {
+    const categorias = Array.from(lista.querySelectorAll(".categoria-nome")).map(function (categoria) {
+        return categoria.textContent.trim();
+    });
+    return categorias.includes(nome);
+}
 
 // Adicionar uma nova categoria
 function adicionarCategoria(lista, nome) {
@@ -79,11 +95,16 @@ function removerCategoria(item) {
 
 // Editar o nome de uma categoria
 function editarCategoria(item) {
-    const novoNome = prompt("Digite o novo nome da categoria:");
-    if (novoNome) {
-        const nomeCategoria = item.querySelector(".categoria-nome");
-        nomeCategoria.textContent = novoNome;
-        salvarCategorias();
+    const nomeCategoria = item.querySelector(".categoria-nome").textContent.trim();
+    const novoNome = prompt("Digite o novo nome da categoria:", nomeCategoria);
+    if (novoNome && novoNome.trim() !== nomeCategoria) {
+        if (!categoriaJaExiste(item.parentNode, novoNome.trim())) {
+            const nomeCategoriaElemento = item.querySelector(".categoria-nome");
+            nomeCategoriaElemento.textContent = novoNome;
+            salvarCategorias();
+        } else {
+            alert("Essa categoria já existe!");
+        }
     }
 }
 
@@ -115,10 +136,12 @@ function salvarCategorias() {
 
 // Adicionando event listeners aos botões de adicionar nova categoria
 document.getElementById("categorias-despesas-add").addEventListener("click", function () {
+    document.getElementById("categoria-nome-despesa").value = "";
     popUpCategoriasDespesas.style.display = "block";
 });
 
 document.getElementById("categorias-receitas-add").addEventListener("click", function () {
+    document.getElementById("categoria-nome-receita").value = "";
     popUpCategoriasReceitas.style.display = "block";
 });
 
