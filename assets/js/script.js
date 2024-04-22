@@ -182,7 +182,8 @@ function criarGrafico(dados_expenses, labels_expenses, dados_incomes, labels_inc
         backgroundColor: '#EA4A4A',
         borderWidth: 1,
         borderRadius: 2000,
-        minBarLength: 30
+        minBarLength: 30,
+        barPercentage: 0.3,
       }]
     },
     options: {
@@ -211,7 +212,8 @@ function criarGrafico(dados_expenses, labels_expenses, dados_incomes, labels_inc
         backgroundColor: '#5EBC4F',
         borderWidth: 1,
         borderRadius: 2000,
-        minBarLength: 30
+        minBarLength: 30,
+        barPercentage: 0.3,
       }]
     },
     options: {
