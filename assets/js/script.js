@@ -186,15 +186,21 @@ function criarGrafico(dados_expenses, labels_expenses, dados_incomes, labels_inc
         barPercentage: 0.3,
       }]
     },
+    
     options: {
-      scales: {
+      plugins: {
+        legend: {
+          display: false // esconde a legenda
+        }
+      },
+      scales: { 
         yAxes: [{
           ticks: {
-            beginAtZero: true
+            beginAtZero: true 
           }
         }]
       }
-    }
+    }    
   });
 
   var ctx1 = document.getElementById('chart_incomes').getContext('2d');
@@ -216,17 +222,22 @@ function criarGrafico(dados_expenses, labels_expenses, dados_incomes, labels_inc
         barPercentage: 0.3,
       }]
     },
+    
     options: {
-      scales: {
+      plugins: {
+        legend: {
+          display: false // esconde a legenda
+        }
+      },
+      scales: { 
         yAxes: [{
           ticks: {
-            beginAtZero: true
+            beginAtZero: true 
           }
         }]
       }
-    }
+    }    
   });
-
 }
 
 const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
