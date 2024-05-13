@@ -147,7 +147,7 @@
                         </thead>
                         <tbody id="receitas_corpo">
                             <!-- Os dados da tabela serão inseridos aqui -->
-                        </tbody1>
+                            </tbody1>
                     </table>
                 </div>
             </div>
@@ -160,17 +160,28 @@
         <div class="modal1">
             <div class="modal1-cabecalho">
                 <p class="modal1-titulo">Adicionar novo item</p>
-                <!-- <span class="modal1-fechar"><i class="fa-solid fa-xmark fa-lg"></i></span> -->
             </div>
             <form>
-                <label for="m-valor">Valor</label>
-                <input id="m-valor" type="number" placeholder="R$" required />
-                <label for="m-descricao">Descrição</label>
-                <input id="m-descricao" type="text" placeholder="Ex.: Alimentação" required />
-                <label for="m-data">
-                    <Datag>Data</Datag>
-                </label>
-                <input id="m-data" type="date" required />
+                <label for="modal-valor">Valor</label>
+                <input id="modal-valor" type="number" placeholder="R$" required />
+                <label for="modal-descricao">Descrição</label>
+                <input id="modal-descricao" type="text" placeholder="Ex.: Alimentação" required />
+                <label for="modal-categoria">Categoria</label>
+                <select id="modal-categoria" required>
+                    <option value="">Selecione uma categoria...</option>
+                    <option value="Alimentação">Alimentação</option>
+                    <option value="Lazer">Lazer</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Saúde">Saúde</option>
+                    <option value="Educação">Educação</option>
+                    <option value="Moradia">Moradia</option>
+                    <option value="Roupas">Roupas</option>
+                    <option value="Eletrônicos">Eletrônicos</option>
+                    <option value="Presentes">Presentes</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <label for="modal-data">Data</label>
+                <input id="modal-data" type="date" required />
                 <button class="btnSalvar" id="btnSalvar">Salvar</button>
             </form>
         </div>

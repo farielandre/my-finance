@@ -1,9 +1,9 @@
 const modal = document.querySelector('.modal-container')
 const tbody = document.getElementById('despesas_corpo')
 const tbody1 = document.getElementById('receitas_corpo')
-const sValor = document.querySelector('#m-valor')
-const sDescricao = document.querySelector('#m-descricao')
-const sData = document.querySelector('#m-data')
+const sValor = document.querySelector('#modal-valor')
+const sDescricao = document.querySelector('#modal-descricao')
+const sData = document.querySelector('#modal-data')
 const btnSalvar = document.querySelector('#btnSalvar')
 
 var sFiltro_mes = document.querySelector('m-mes_filtro')
@@ -69,7 +69,7 @@ function insertItem(selec, item, index) {
 
   tr.innerHTML = `
     <td class="tabela-descricao">${item.descricao}</td>
-    <td>R$ ${item.valor}</td>
+    <td>R$ ${parseFloat(item.valor).toFixed(2)}</td>
     <td>${item.data}</td>
     <td>
       <button class="tabela-botao-acao editar" title="Editar" onclick="editItem(${index})"><i class="fa-solid fa-pencil"></i></button>
@@ -151,9 +151,9 @@ function loadItens() {
   )
 
   balance = incomes - expenses
-  document.getElementById('expenses').innerHTML = expenses;
-  document.getElementById('incomes').innerHTML = incomes;
-  document.getElementById('balance').innerHTML = balance;
+  document.getElementById('expenses').innerHTML = `R$ ${expenses.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+  document.getElementById('incomes').innerHTML = `R$ ${incomes.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+  document.getElementById('balance').innerHTML = `R$ ${balance.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
   criarGrafico(eixoX_expenses, eixoY_expenses, eixoX_incomes, eixoY_incomes);
 }
 
@@ -180,8 +180,7 @@ function criarGrafico(dados_expenses, labels_expenses, dados_incomes, labels_inc
         label: 'Dados',
         data: dados_expenses,
         backgroundColor: '#EA4A4A',
-        borderWidth: 1,
-        borderRadius: 2000,
+        borderRadius: 12,
         minBarLength: 30,
         barPercentage: 0.3,
       }]
@@ -216,8 +215,7 @@ function criarGrafico(dados_expenses, labels_expenses, dados_incomes, labels_inc
         label: 'Dados',
         data: dados_incomes,
         backgroundColor: '#5EBC4F',
-        borderWidth: 1,
-        borderRadius: 2000,
+        borderRadius: 12,
         minBarLength: 30,
         barPercentage: 0.3,
       }]

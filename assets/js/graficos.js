@@ -1,8 +1,8 @@
 let expensesData = [1000, 500, 200]
 let incomeData = [2000, 1500]
 
-const despesasCanvas = document.getElementById('despesasChart')
-const receitasCanvas = document.getElementById('receitasChart')
+const despesasCanvas = document.getElementById('chart_expenses')
+const receitasCanvas = document.getElementById('chart_incomes')
 
 const despesasChart = new Chart(despesasCanvas, {
   type: 'bar',

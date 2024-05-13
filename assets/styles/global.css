@@ -113,7 +113,7 @@ label {
   display: flex;
   flex-direction: row;
   background-color: var(--color-light-grey);
-  height: 1000px;
+  height: 100vh;
 }
 
 /* nav */
@@ -507,11 +507,37 @@ tbody tr:hover {
 .modal1 {
   background-color: var(--color-white);
   margin: 15% auto;
-  padding: 20px 30px 20px 20px;
+  padding: 20px;
   width: 400px;
   border-radius: 12px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   height: fit-content;
+}
+
+.modal1 form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal1 input, select {
+  color: var(--color-black);
+  border-radius: 12px;
+  padding: 0 1rem 0 1rem;
+  height: 38px;
+  border: 1px solid var(--color-grey);
+  margin-bottom: 10px;
+}
+
+.modal1 label {
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.modal1-titulo {
+  font-weight: var(--font-w-medium);
+  font-size: 18px;
+  margin-bottom: 1rem;
 }
 
 .btnSalvar {
@@ -533,40 +559,6 @@ tbody tr:hover {
   color: var(--color-light-grey);
   transition: all 0.3s;
   cursor: pointer;
-}
-
-.modal1 label {
-  font-size: 14px;
-  width: 100%;
-}
-
-.modal1-cabecalho {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.modal1-fechar:hover,
-.modal1-fechar:focus {
-  color: var(--color-black);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal1-titulo {
-  font-weight: var(--font-w-medium);
-  font-size: 18px;
-}
-
-.modal1 input {
-  color: var(--color-black);
-  border-radius: 12px;
-  padding: 0 1rem 0 1rem;
-  height: 38px;
-  width: calc(100% - 20px);
-  border: 1px solid var(--color-grey);
-  margin-bottom: 10px;
 }
 
 .active {
